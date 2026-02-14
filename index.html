@@ -40,7 +40,7 @@
           <div class="col-lg-6" data-aos="fade-right">
             <span class="badge text-bg-light border border-light-subtle mb-3">Escritor urabeño · Juglar campesino</span>
             <h1 class="display-4 fw-bold mb-3">Palabras que nacen de la tierra y cabalgan la memoria.</h1>
-            <p class="lead mb-4">Luis Fernando López Pérez transforma la vida rural del Gran Urabá en poesía, relato y denuncia sensible.</p>
+            <p class="lead mb-4">Luis Fernando López Pérez transforma la vida rural del Gran Urabá en poesía, relato y vaqueria.</p>
             <div class="d-flex flex-wrap gap-2">
               <a href="#obras" class="btn btn-terracota btn-lg">Explorar obras</a>
               <a href="#contacto" class="btn btn-outline-light btn-lg">Contactar</a>
@@ -55,67 +55,132 @@
       </div>
     </section>
 
-    <section id="sobre" class="section-space bg-light">
+    <!-- SECCIÓN SOBRE - CON MARCA DE AGUA COMO FONDO -->
+    <section id="sobre" class="section-space bg-light about-section-watermark">
       <div class="container">
         <div class="row g-4 align-items-center">
           <div class="col-md-5" data-aos="zoom-in">
-            <img src="assets/images/f2.jpg" class="img-fluid rounded-4 shadow-sm" alt="Fotografía de Luis Fernando López Pérez" loading="lazy">
+            <img src="assets/images/f5.jpeg" class="img-fluid rounded-4 shadow-sm" alt="Fotografía de Luis Fernando López Pérez" loading="lazy">
           </div>
           <div class="col-md-7" data-aos="fade-up">
             <h2 class="display-6 fw-bold mb-3">Sobre el autor</h2>
             <p>Luis Fernando López Pérez nació en Apartadó y creció en El Totumo. Campesino, vaquero y domador de caballos, encontró en la poesía una forma de preservar la voz de su territorio.</p>
             <p>Publicó en 2021 su primer poemario, <em>Mientras el amor galope</em>, y trabaja en nuevas obras que retratan la vida rural, la memoria histórica y la resistencia del Gran Urabá.</p>
-            <blockquote class="blockquote rustic-quote mt-4 mb-0">“Escribo para que las voces silenciadas encuentren eco en el corazón de quien lee.”</blockquote>
+            <blockquote class="blockquote rustic-quote mt-4 mb-0">“Escribo para que las voces silenciadas encuentren eco en el corazón de quien lee.”</blockquote>           
+             <!-- BOTÓN "SABER MÁS" QUE ABRE MODAL -->
+            <button type="button" class="btn btn-terracota mt-4" id="openBioModal" data-bs-toggle="modal" data-bs-target="#bioModal">
+              Saber más
+            </button>          
           </div>
         </div>
       </div>
     </section>
 
-    <section id="obras" class="section-space">
-      <div class="container">
-        <div class="d-flex justify-content-between align-items-end flex-wrap gap-2 mb-4" data-aos="fade-up">
-          <div>
-            <h2 class="display-6 fw-bold mb-1">Obras destacadas</h2>
-            <p class="text-muted mb-0">Relatos y poemas que honran la raíz campesina.</p>
+    <!-- MODAL DE BIOGRAFÍA COMPLETA -->
+    <div class="modal fade" id="bioModal" tabindex="-1" aria-labelledby="bioModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content bio-modal-content">
+          <div class="modal-header border-0 pb-0">
+            <button type="button" class="btn-close custom-close-btn" data-bs-dismiss="modal" aria-label="Cerrar" id="closeModalBtn"></button>
           </div>
-        </div>
-
-        <div class="row g-4">
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
-            <article class="card h-100 border-0 shadow-sm rustic-card">
-              <img src="assets/images/p1.jpg" class="card-img-top" alt="Portada de Mientras el amor galope" loading="lazy">
-              <div class="card-body">
-                <span class="small text-uppercase text-muted">Poesía</span>
-                <h3 class="h5 mt-2">Mientras el amor galope</h3>
-                <p class="card-text">Versos íntimos que recorren la tierra, el deseo y la esperanza desde una mirada profundamente rural.</p>
-              </div>
-            </article>
-          </div>
-
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="120">
-            <article class="card h-100 border-0 shadow-sm rustic-card">
-              <img src="assets/images/p2.jpg" class="card-img-top" alt="Portada de Un cuento de vaqueros y otros relatos" loading="lazy">
-              <div class="card-body">
-                <span class="small text-uppercase text-muted">Cuento y juglaría</span>
-                <h3 class="h5 mt-2">Un cuento de vaqueros y otros relatos</h3>
-                <p class="card-text">Historias al galope que conectan tradición oral, oficio campesino y memoria del territorio.</p>
-              </div>
-            </article>
-          </div>
-
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="240">
-            <article class="card h-100 border-0 shadow-sm rustic-card">
-              <img src="assets/images/p3.jpg" class="card-img-top" alt="Portada de próximo poemario de memoria" loading="lazy">
-              <div class="card-body">
-                <span class="small text-uppercase text-muted">Memoria histórica</span>
-                <h3 class="h5 mt-2">Próximo poemario</h3>
-                <p class="card-text">Una obra en preparación que aborda violencia, transformación y resistencia en los caminos del Urabá.</p>
-              </div>
-            </article>
+          <div class="modal-body pt-0">
+            <!-- Imagen del autor en modal -->
+            <div class="text-center mb-4">
+              <img src="assets/images/f6.jpg" class="img-fluid rounded-3 shadow-sm author-modal-image" alt="Luis Fernando López Pérez" loading="lazy">
+            </div>
+            <!-- Contenido de biografía completa -->
+            <div class="bio-modal-content-text">
+              <h2 class="h3 fw-bold mb-3 text-center">Luis Fernando López Pérez</h2>
+              <p class="fs-6">
+                Luis Fernando López Pérez nació en Apartadó, Antioquia, en el corazón del Gran Urabá. Desde pequeño, sus raíces campesinas lo conectaron con la tierra, los caballos y las historias que viven en las llanuras verdes.
+              </p>
+              <p class="fs-6">
+                Creció en El Totumo, donde aprendió el oficio de vaquero y domador de caballos. Estas experiencias vividas se convirtieron en la materia prima de su poesía: versos que huelen a tierra mojada, que relincan como potros salvajes, que guardan la memoria de un territorio forjado por la resistencia.
+              </p>
+              <p class="fs-6">
+                En 2021 publicó su primer poemario, <em>Mientras el amor galope</em>, una colección de versos íntimos que recorren la tierra, el deseo y la esperanza desde una mirada profundamente rural. El libro fue aclamado por su autenticidad y su capacidad de transformar la cotidianidad campesina en poesía de alcance universal.
+              </p>
+              <p class="fs-6">
+                Actualmente trabaja en nuevas obras que retratan la violencia, la transformación y la resistencia del Urabá. Su escritura es un acto político: preservar las voces silenciadas, honrar la memoria histórica y mantener vivo el espíritu de su pueblo.
+              </p>
+              <p class="fs-6">
+                <strong>"Escribo para que las voces silenciadas encuentren eco en el corazón de quien lee."</strong> Esta máxima define su compromiso como escritor y como tejedor de historias que nacen de la tierra y cabalgan la memoria.
+              </p>
+              <p class="fs-6 text-muted mt-4">
+                Cuando no está escribiendo, Luis Fernando sigue siendo vaquero: domador de caballos, cuidador de la tierra y guardián de las historias que el Urabá tiene para contar.
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+
+   <section id="obras" class="section-space">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-end flex-wrap gap-2 mb-4" data-aos="fade-up">
+      <div>
+        <h2 class="display-6 fw-bold mb-1">Obras destacadas</h2>
+        <p class="text-muted mb-0">Relatos y poemas que honran la raíz campesina.</p>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+        <article class="card h-100 border-0 shadow-sm rustic-card">
+          <img src="assets/images/p1.jpg" class="card-img-top" alt="Portada de Mientras el amor galope" loading="lazy">
+          <div class="card-body">
+            <span class="small text-uppercase text-muted">Poesía</span>
+            <h3 class="h5 mt-2">Mientras el amor galope</h3>
+            <p class="card-text">Versos íntimos que recorren la tierra, el deseo y la esperanza desde una mirada profundamente rural.</p>
+
+            <!-- Botón Comprar -->
+            <a href="https://wa.me/573001234567?text=Hola,%20quiero%20comprar%20Mientras%20el%20amor%20galope"
+               target="_blank"
+               class="btn btn-success w-100 mt-3">
+              Comprar
+            </a>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="120">
+        <article class="card h-100 border-0 shadow-sm rustic-card">
+          <img src="assets/images/p3.jpg" class="card-img-top" alt="Portada de Un cuento de vaqueros y otros relatos" loading="lazy">
+          <div class="card-body">
+            <span class="small text-uppercase text-muted">Cuento y juglaría</span>
+            <h3 class="h5 mt-2">Un cuento de vaqueros y otros relatos. Proximamente</h3>
+            <p class="card-text">Historias al galope que conectan tradición oral, oficio vaquero y memoria del territorio.</p>
+
+            <!-- Botón Comprar -->
+            <a href="https://wa.me/573001234567?text=Hola,%20quiero%20comprar%20Un%20cuento%20de%20vaqueros%20y%20otros%20relatos"
+               target="_blank"
+               class="btn btn-success w-100 mt-3">
+              Comprar
+            </a>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="240">
+        <article class="card h-100 border-0 shadow-sm rustic-card">
+          <img src="assets/images/p2.jpg" class="card-img-top" alt="Portada de próximo poemario de memoria" loading="lazy">
+          <div class="card-body">
+            <span class="small text-uppercase text-muted">Memoria histórica</span>
+            <h3 class="h5 mt-2">Antologia</h3>
+            <p class="card-text">Una participacion de mis poemas y algo mas.</p>
+
+            <!-- Botón Comprar -->
+            <a href="https://wa.me/573001234567?text=Hola,%20quiero%20información%20sobre%20el%20próximo%20poemario"
+               target="_blank"
+               class="btn btn-success w-100 mt-3">
+              Comprar
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
 
     <section id="contacto" class="section-space bg-light">
       <div class="container">
@@ -138,6 +203,11 @@
                     <label for="email" class="form-label">Correo electrónico</label>
                     <input type="email" class="form-control" id="email" name="email" required maxlength="120" placeholder="tu@email.com">
                     <div class="invalid-feedback">Ingresa un correo válido.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="phone" class="form-label">Número de teléfono *</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" required placeholder="+57 XXX XXX XXXX">
+                    <div class="invalid-feedback">Ingresa un teléfono válido.</div>
                   </div>
                   <div class="col-12">
                     <label for="message" class="form-label">Mensaje</label>
