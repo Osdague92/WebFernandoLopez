@@ -382,7 +382,22 @@
 
                 <div id="formAlert" class="alert d-none" role="alert"></div>
 
-                <form id="contactForm" novalidate>
+               <form
+                 name="contacto"
+                method="POST"
+                action="/?form=success"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
+                id="contactForm"
+                novalidate
+               >
+                  <input type="hidden" name="form-name" value="contacto" />
+                  <p hidden>
+                    <label>
+                      Don’t fill this out if you're human:
+                      <input name="bot-field" />
+                    </label>
+                  </p>
                   <div class="row g-3">
                     <div class="col-md-6">
                       <label for="name" class="form-label">Nombre</label>
@@ -432,6 +447,30 @@
                       <div class="invalid-feedback">
                         Ingresa un teléfono válido.
                       </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="city" class="form-label">Ciudad</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="city"
+                        name="city"
+                        maxlength="100"
+                        placeholder="Ciudad"
+                      />
+                    </div>
+                    <div class="col-12">
+                      <label for="interest" class="form-label">Interés</label>
+                      <select
+                        class="form-select"
+                        id="interest"
+                        name="interest"
+                      >
+                        <option value="comprar_libro">Comprar libro</option>
+                        <option value="evento">Invitar a evento o charla</option>
+                        <option value="lector">Soy lector</option>
+                        <option value="otro">Otro</option>
+                      </select>
                     </div>
                     <div class="col-12">
                       <label for="message" class="form-label">Mensaje</label>

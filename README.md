@@ -12,7 +12,7 @@ Proyecto web estático optimizado para:
 
 - Presentación profesional del autor  
 - Formulario de contacto seguro  
-- Envío de correos mediante función serverless  
+- Formulario de contacto con Netlify Forms  
 - Despliegue continuo en producción  
 
 ---
@@ -23,8 +23,7 @@ Proyecto web estático optimizado para:
 - CSS3  
 - JavaScript (Vanilla)  
 - Bootstrap 5  
-- Netlify Functions  
-- Resend API  
+- Netlify Forms  
 
 ---
 
@@ -41,8 +40,8 @@ Proyecto web estático optimizado para:
 
 - Diseño responsive  
 - Animaciones suaves  
-- Validación frontend y backend  
-- Manejo seguro de datos  
+- Validación frontend mejorada  
+- Captura de leads para mini CRM de lectores  
 - Arquitectura lista para producción  
 
 ---
