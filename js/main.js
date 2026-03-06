@@ -72,6 +72,19 @@ function setupContactForm() {
     alertBox.textContent = '';
   };
 
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('form') === 'success') {
+    showAlert('success', 'Mensaje enviado correctamente. ¡Gracias por contactarme!');
+    const cleanUrl = `${window.location.pathname}${window.location.hash || '#contacto'}`;
+    window.history.replaceState({}, document.title, cleanUrl);
+  }
+
+  window.addEventListener('pageshow', () => {
+    isSubmitting = false;
+    submitBtn.disabled = false;
+    spinner.classList.add('d-none');
+  });
+
   // Validación adicional para teléfono
   const validateForm = () => {
     const phoneInput = form.phone;
@@ -95,8 +108,7 @@ function setupContactForm() {
     return true;
   };
 
-  form.addEventListener('submit', async (event) => {
-    event.preventDefault();
+  form.addEventListener('submit', (event) => {
     hideAlert();
 
     if (isSubmitting) return;
@@ -108,6 +120,7 @@ function setupContactForm() {
     }
 
     if (!form.checkValidity()) {
+      event.preventDefault();
       event.stopPropagation();
       form.classList.add('was-validated');
       showAlert('warning', 'Revisa los campos obligatorios antes de enviar.');
@@ -116,50 +129,9 @@ function setupContactForm() {
 
     form.classList.add('was-validated');
 
-    const phoneInput = form.phone;
-    const phoneClean = phoneInput ? phoneInput.value.replace(/\D/g, '') : '';
-
-    const payload = {
-      name: form.name.value.trim(),
-      email: form.email.value.trim(),
-      phone: phoneClean,
-      message: form.message.value.trim(),
-    };
-
     isSubmitting = true;
     submitBtn.disabled = true;
     spinner.classList.remove('d-none');
-
-    try {
-      const response = await fetch('/.netlify/functions/send-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.error || 'No fue posible enviar el mensaje.');
-      }
-
-      form.reset();
-      form.classList.remove('was-validated');
-      
-      // Limpiar estados de validación
-      const inputs = form.querySelectorAll('.form-control');
-      inputs.forEach(input => {
-        input.classList.remove('is-valid', 'is-invalid');
-      });
-      
-      showAlert('success', data.message || 'Mensaje enviado correctamente.');
-    } catch (error) {
-      showAlert('danger', error.message || 'Ocurrió un error inesperado. Inténtalo nuevamente.');
-    } finally {
-      isSubmitting = false;
-      submitBtn.disabled = false;
-      spinner.classList.add('d-none');
-    }
   });
 }
 
