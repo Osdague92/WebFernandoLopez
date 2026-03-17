@@ -78,19 +78,44 @@ h3,
 .rustic-card {
   border-radius: 1rem;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .rustic-card img {
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
   width: 100%;
-  height: 75%;
-  object-fit: cover;
+  height: 100%;
+  object-fit: contain;
 }
 
 .rustic-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 14px 25px rgba(45, 34, 24, 0.12) !important;
+}
+
+.rustic-card .card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 1rem;
+}
+
+.rustic-card .card-text {
+  text-align: justify;
+  flex: 1;
+}
+
+.preview-trigger {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+  display: block;
 }
 
 .footer-rustic {
@@ -129,7 +154,7 @@ h3,
   position: absolute;
   inset: 0; /* reemplaza top, left, right, bottom */
   
-  background-image: url('../assets/images/f8.jpg');
+  background-image: url('../assets/images/f8.webp');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -407,4 +432,33 @@ h3,
 }
 #contacto {
   background-color: #625041 !important;
+}
+
+.preview-trigger img:hover {
+  transform: scale(1.03);
+  transition: 0.3s ease;
+}
+
+.hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(60, 40, 30, 0.6);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.preview-trigger:hover .hover-overlay {
+  opacity: 1;
+}
+
+.preview-text-content {
+  font-family: 'Playfair Display', serif;
+  line-height: 1.8;
+  white-space: pre-line;
 }

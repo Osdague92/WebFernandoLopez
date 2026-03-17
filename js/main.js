@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupPhoneValidation();
   setupModalEnhancements();
   enhanceFormVisibility();
+  setupPreviewModal();
 });
 
 function setCurrentYear() {
@@ -275,5 +276,30 @@ function enhanceFormVisibility() {
     input.addEventListener('blur', function() {
       this.style.transform = 'scale(1)';
     });
+  });
+}
+
+/* ================================================================
+   PREVIEW MODAL SETUP
+   ================================================================ */
+function setupPreviewModal() {
+  const previewModal = document.getElementById('previewModal');
+  if (!previewModal) return;
+
+  previewModal.addEventListener('show.bs.modal', (event) => {
+    const button = event.relatedTarget;
+    if (!button) return;
+
+    const title = button.getAttribute('data-title');
+    const type = button.getAttribute('data-type');
+    const content = button.getAttribute('data-content');
+
+    const modalTitle = document.getElementById('previewModalTitle');
+    const modalType = document.getElementById('previewModalType');
+    const modalContent = document.getElementById('previewModalContent');
+
+    if (modalTitle) modalTitle.innerText = title || '';
+    if (modalType) modalType.innerText = type || '';
+    if (modalContent) modalContent.innerText = content || '';
   });
 }
