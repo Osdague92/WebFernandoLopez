@@ -154,7 +154,7 @@ h3,
   position: absolute;
   inset: 0; /* reemplaza top, left, right, bottom */
   
-  background-image: url('../assets/images/f8.jpg');
+  background-image: url('../assets/images/f8.webp');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
