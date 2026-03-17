@@ -78,19 +78,44 @@ h3,
 .rustic-card {
   border-radius: 1rem;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .rustic-card img {
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
   width: 100%;
-  height: 75%;
-  object-fit: cover;
+  height: 100%;
+  object-fit: contain;
 }
 
 .rustic-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 14px 25px rgba(45, 34, 24, 0.12) !important;
+}
+
+.rustic-card .card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 1rem;
+}
+
+.rustic-card .card-text {
+  text-align: justify;
+  flex: 1;
+}
+
+.preview-trigger {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+  display: block;
 }
 
 .footer-rustic {
