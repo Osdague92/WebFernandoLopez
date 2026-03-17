@@ -408,3 +408,32 @@ h3,
 #contacto {
   background-color: #625041 !important;
 }
+
+.preview-trigger img:hover {
+  transform: scale(1.03);
+  transition: 0.3s ease;
+}
+
+.hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(60, 40, 30, 0.6);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.preview-trigger:hover .hover-overlay {
+  opacity: 1;
+}
+
+.preview-text-content {
+  font-family: 'Playfair Display', serif;
+  line-height: 1.8;
+  white-space: pre-line;
+}
